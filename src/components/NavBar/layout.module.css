@@ -5,9 +5,11 @@
     flex-wrap: nowrap;
     justify-content: center;
     border-bottom: 1px solid gray;
+    background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2;
 }
 .nav_bar div{
     margin-left: 20px;

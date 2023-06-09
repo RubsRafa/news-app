@@ -4,9 +4,6 @@
     margin-top: 100px;
     width: 90%;
 }
-.category_title{
-    text-align: center;
-}
 .main_content{
     width: 100%;
     display: flex;
@@ -15,7 +12,7 @@
     justify-content: space-around;
 }
 .category_name{
-    font-size: 22px;
+    font-size: 17px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .category_box{
@@ -35,7 +32,7 @@
     object-fit: contain;
 }
 .news_title{
-    font-size: 18px;
+    font-size: 19px;
     color: rgb(191, 208, 255);
     width: 250px;
     object-fit: contain;
@@ -49,7 +46,7 @@
     text-decoration: underline;
 }
 .news_description{
-    font-size: 14px;
+    font-size: 15px;
     width: 250px;
     height: 49px;
     object-fit: contain;
