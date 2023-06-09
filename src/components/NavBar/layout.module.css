@@ -1,0 +1,21 @@
+.nav_bar {
+    width: 100vw;
+    padding: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.nav_bar div{
+    margin-left: 20px;
+}
+.nav_bar h1 {
+    font-size: 30px;
+}
+.nav_bar h3 {
+    color: #fff;
+    font-size: 17px;
+}
