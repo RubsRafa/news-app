@@ -20,3 +20,15 @@
     color: #ab9cff;
     font-size: 17px;
 }
+@media(max-width: 500px) {
+    .nav_bar div{
+        font-size: 20px;
+    }
+    .nav_bar h1{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .nav_bar h3{
+        font-size: 13px;
+    }
+}

@@ -36,3 +36,24 @@
     cursor: pointer;
     text-decoration: underline;
 }
+@media(max-width: 500px) {
+    .category_box{
+        margin-top: 5px;
+    }
+    .category_name{
+        font-size: 13px;
+    }
+    .main_content_box{
+        max-width: 300px;
+        width: 100%;
+    }
+    .news_image{
+        width: 120px;
+        object-fit: contain;
+    }
+    .news_title{
+        font-size: 13px;
+        width: 120px;
+        object-fit: contain;
+    }
+}
