@@ -14,7 +14,7 @@ export default function Article() {
     const handleGoBack = () => {
         router.back()
     }
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
 
     const fetchData = async () => {

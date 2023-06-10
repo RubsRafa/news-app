@@ -4,7 +4,7 @@ import { getNewsForCategories } from '@/services/newsApi';
 import CategoriesBox from '../CategoriesBox';
 
 export default function Categories() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [tesla, setTesla] = useState(null);
     const [bitcoin, setBitcoin] = useState(null);
     const [sports, setSports] = useState(null);

@@ -11,7 +11,7 @@ export default function Category() {
     const { category, setArticleTitle } = useContext(Context);
     const { type } = router.query;
     let newType = type || category;
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
 
     const fetchData = async () => {
