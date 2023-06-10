@@ -31,7 +31,7 @@
 }
 .article_title{
   font-size: 40px;
-  width: 50%;
+  width: 60%;
 }
 .article_author{
   margin: 5px auto;
@@ -93,4 +93,72 @@
   width: 85%;
   text-indent: 50px;
   font-weight: 400;
+}
+@media(max-width: 800px) {
+  .article_title{
+    width: 70%;
+  }
+}
+@media(max-width: 550px) {
+  .category_title{
+    padding: 2px;
+    margin: 20px auto;
+  }
+  .category_title h1{
+    font-size: 17px;
+  }
+  .article_title{
+    font-size: 30px;
+    width: 80%;
+  }
+  .article_author{
+    margin: 3px auto;
+    font-size: 13px;
+  }
+  .article_date{
+    margin: 3px auto;
+    font-size: 13px;
+  }
+  .article_content_box{
+    margin: 0 auto;
+    width: 95%;
+    flex-wrap: wrap;
+  }
+  .article_source{
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+  }
+  .article_description{
+    font-size: 18px;
+    margin: 10px auto;
+    padding: 2px;
+    width: 100%;
+    text-indent: 30px;
+  }
+  .article_main_text{
+    text-align: justify;
+    font-size: 18px;
+    margin: 180px auto;
+    padding: 2px;
+    width: 95%;
+    text-indent: 30px;
+  }
+}
+@media(max-width: 300px) {
+  .category_title{
+    padding: 2px;
+    margin: 10px auto;
+  }
+  .category_title h1{
+    font-size: 14px;
+  }
+  .article_title{
+    font-size: 22px;
+    width: 100%;
+  }
+  .article_main_text{
+    font-size: 17px;
+    margin: 150px auto;
+  }
 }
