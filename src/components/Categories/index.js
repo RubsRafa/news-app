@@ -19,7 +19,6 @@ export default function Categories() {
             setLoading(true);
             const teslaInfo = await getNewsForCategories('tesla');
             setTesla(teslaInfo.articles);
-            console.log(teslaInfo.articles);
 
             const bitcoinInfo = await getNewsForCategories('BitCoin');
             setBitcoin(bitcoinInfo.articles)
@@ -63,37 +62,21 @@ export default function Categories() {
 
                 <div className={style.main_content}>
 
-                    {tesla &&
-                        <CategoriesBox type={'Tesla'} info={tesla} />
-                    }
+                    {tesla && <CategoriesBox type={'Tesla'} info={tesla} />}
 
-                    {bitcoin &&
-                        <CategoriesBox type={'BitCoin'} info={bitcoin} />
-                    }
+                    {bitcoin && <CategoriesBox type={'BitCoin'} info={bitcoin} />}
 
-                    {sports &&
-                        <CategoriesBox type={'Sports'} info={sports} />
-                    }
+                    {sports && <CategoriesBox type={'Sports'} info={sports} />}
 
-                    {health &&
-                        <CategoriesBox type={'Health'} info={health} />
-                    }
+                    {health && <CategoriesBox type={'Health'} info={health} />}
 
-                    {apple &&
-                        <CategoriesBox type={'Apple'} info={apple} />
-                    }
+                    {apple && <CategoriesBox type={'Apple'} info={apple} />}
 
-                    {business &&
-                        <CategoriesBox type={'Business'} info={business} />
-                    }
+                    {business && <CategoriesBox type={'Business'} info={business} />}
 
-                    {techCrunch &&
-                        <CategoriesBox type={'TechCrunch'} info={techCrunch} />
-                    }
+                    {techCrunch && <CategoriesBox type={'TechCrunch'} info={techCrunch} />}
 
-                    {entertainment &&
-                        <CategoriesBox type={'Entertainment'} info={entertainment} />
-                    }
+                    {entertainment && <CategoriesBox type={'Entertainment'} info={entertainment} />}
 
                 </div>}
 

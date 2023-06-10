@@ -1,13 +1,16 @@
 import '../../app/globals.css';
 import { getSpecifiedArticle } from "@/services/newsApi";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import style from './layout.module.css';
+import Context from '@/context/Context';
 
 export default function Article() {
     const router = useRouter();
-    const { title } = router.query;
-    const urlTitle = encodeURIComponent(title);
+    const { articleTitle } = useContext(Context);
+    const { title, category } = router.query;
+    let newTitle = title || articleTitle;
+    let newCategory = category;
     const handleGoBack = () => {
         router.back()
     }
@@ -15,10 +18,14 @@ export default function Article() {
     const [data, setData] = useState(null);
 
     const fetchData = async () => {
+        if(typeof window !== 'undefined') {
+            newTitle = newTitle || localStorage.getItem('articleTitle');
+            newCategory = newCategory || localStorage.getItem('category')
+        }
         try {
             setLoading(true);
-            console.log('título', title, urlTitle)
-            const dataInfo = await getSpecifiedArticle(urlTitle);
+            console.log('título', title, newTitle)
+            const dataInfo = await getSpecifiedArticle(newTitle);
             setData(dataInfo.articles[0]);
             console.log(dataInfo.articles[0]);
         } catch (e) {
@@ -29,13 +36,15 @@ export default function Article() {
     }
 
     useEffect(() => {
-        fetchData();
+        setTimeout(() => {
+            fetchData();
+        }, 3000);
     }, [])
 
     return (
         <main className={style.main}>
             <div className={style.category_title}>
-                <h1 onClick={handleGoBack}>Back to category</h1>
+                <h1 onClick={handleGoBack}>Back to {newCategory}</h1>
                 <a href='/'><h1>Back to home</h1></a>
             </div>
 
@@ -48,7 +57,7 @@ export default function Article() {
                 <div className={style.article_main_content}>
                     <div className={style.article_info}>
                         <div className={style.article_title}>{data?.title}</div>
-                        <h1 className={style.article_author}>Author: {data?.author ? data.author : 'Anonymous'}</h1>
+                        <h1 className={style.article_author}>Author: {(data?.author) ? (data.author) : 'Anonymous'}</h1>
                         {data?.publishedAt &&
                             <h1 className={style.article_date}>Published at: {`${data?.publishedAt.slice(0, 4)}/${data?.publishedAt.slice(5, 7)}/${data?.publishedAt.slice(8, 10)} at ${data?.publishedAt.slice(11, 16)}`}</h1>
                         }
@@ -56,7 +65,7 @@ export default function Article() {
 
                     <div className={style.article_content_box}>
                         <div className={style.article_content}>
-                            {data?.urlToImage && <img className={style.article_image} src={data?.urlToImage} alt='article_image' />}
+                            {(data?.urlToImage || data?.image) && <img className={style.article_image} src={data?.urlToImage || data?.image} alt='article_image' />}
                             <h2 className={style.article_source}>Source: {data?.source.name}</h2>
                         </div>
                         <div className={style.article_content}>
