@@ -15,7 +15,6 @@ export default function Category() {
             setLoading(true);
             const dataInfo = await getAllNews(type);
             setData(dataInfo.articles);
-            console.log(dataInfo.articles)
         } catch (e) {
             console.log(e);
         } finally {
@@ -38,10 +37,10 @@ export default function Category() {
             <div className={style.big_box_news}>Loading news... Stick around!</div>
             :
                 <div className={style.big_box_news}>
-                        {data?.map((d) => (
+                        {data?.map((d, i) => (
                             <>
                                 {(d.urlToImage !== null) ?
-                                    <a href={d.url}>
+                                    <a key={i} href={`/article/${d.title}`}>
                                         <div className={style.news_box}>
                                             <img className={style.news_image} src={d.urlToImage} alt='news_image' />
                                             <h1 className={style.news_title}>{d.title}</h1>
@@ -50,7 +49,7 @@ export default function Category() {
                                     </a>
                                     :
 
-                                    <a href={d.url}>
+                                    <a key={i} href={`/article/${d.title}`}>
                                         <div className={style.news_box}>
                                             <h1 className={style.news_title}>{d.title}</h1>
                                             <h1 className={style.news_description}>{d.description}</h1>

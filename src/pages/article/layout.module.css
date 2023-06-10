@@ -1,0 +1,36 @@
+.main {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+.category_title{
+  padding: 10px;
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid gray;
+  justify-content: space-between;
+}
+.category_title h1{
+  font-size: 22px;
+}
+.article_main_content{
+  background-color: hotpink;
+  margin: 0 auto;
+  width: 90%;
+}
+.article_info{
+  display: block;
+  flex-direction: column;
+}
+.article_title{
+  background-color: teal;
+  font-size: 40px;
+  width: 60%;
+}

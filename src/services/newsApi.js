@@ -11,3 +11,9 @@ export async function getAllNews(type) {
     const data = await response.json();
     return data;
 }
+
+export async function getSpecifiedArticle(title) {
+    const response = await fetch(`${baseURL}&qInTitle=${title}&pageSize=1`);
+    const data = await response.json();
+    return data;
+}
