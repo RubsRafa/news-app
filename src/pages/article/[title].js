@@ -57,7 +57,14 @@ export default function Article() {
                             <img className={style.article_image} src={data?.urlToImage} alt='article_image' />
                             <h2 className={style.article_source}>Source: {data?.source.name}</h2>
                         </div>
-                        <h1 className={style.article_description}>{data?.description}</h1>
+                        <div className={style.article_content}>
+                            <h1 className={style.article_description}>{data?.description}</h1>
+                            <h1 className={style.article_more}>For more information, <a href={data?.url}>click here</a>.</h1>
+                        </div>
+                    </div>
+
+                    <div className={style.article_main_text}>
+                        {data?.content.slice(0,199)}
                     </div>
                 </div>}
         </main>
