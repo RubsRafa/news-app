@@ -21,16 +21,56 @@
   font-size: 22px;
 }
 .article_main_content{
-  background-color: hotpink;
   margin: 0 auto;
   width: 90%;
 }
 .article_info{
   display: block;
   flex-direction: column;
+  border-bottom: 1px solid gray;
 }
 .article_title{
-  background-color: teal;
   font-size: 40px;
-  width: 60%;
+  width: 50%;
+}
+.article_author{
+  margin: 5px auto;
+  font-size: 18px;
+  color: gray;
+}
+.article_date{
+  margin: 5px auto;
+  font-size: 18px;
+  color: gray;
+}
+.article_content{
+  margin: 20px auto;
+  width: 95%;
+}
+.article_content_box{
+  margin: 20px auto;
+  width: 85%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.article_image{
+  margin: 0 auto;
+  object-fit: contain;
+  width: 100%;
+  border-radius: 5px;
+}
+.article_description{
+  text-align: justify;
+  font-size: 22px;
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  text-indent: 50px;
+}
+.article_source{
+  font-size: 18px;
+  color: gray;
+  margin-bottom: 20px;
+  padding: 10px;
 }

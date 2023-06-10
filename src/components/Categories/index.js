@@ -56,7 +56,7 @@ export default function Categories() {
 
             {loading ?
 
-                <div className={style.main_content}>Loading news... Stick around!</div>
+                <div className={style.main_content}>Loading news... Stay tuned!</div>
                 :
 
                 <div className={style.main_content}>
