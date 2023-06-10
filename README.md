@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NewsHUB: 
+Your Source for the Latest News
 
-## Getting Started
+NewsHUB is a website that provides new articles on various topics. This aplication provides 20 articles from every category type, and it loads different articles when the page is reloaded.
+## This application uses:
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Next.js
 
-First, run the development server:
+## Libraries used:
+- dayjs
+- react-icons
+
+## Installation
+1. Clone the repository and navigate to it with the following commands:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/RubsRafa/news-app.git
+
+cd news-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Don't forget to install the dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+#or
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Star the project:
 
-## Learn More
+```bash
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+*The website will run on port 3000. If you want it to run on another port, you can add the command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+-p <PORT>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ # API
+ This application was built based on News API documentation on 06/2023 (https://newsapi.org/). 
+ - Don't forget to request an API key and add it to your .env file as NEXT_PUBLIC_API_KEY.
+ - If you use another public API, don't forget to change the parameters, API URL on you local .env file and on src/services/api.js (if you need to change language, article date and sorting) or src/services/newsApi.js (for content and length of articles).
