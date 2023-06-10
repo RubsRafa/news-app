@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import style from './layout.module.css';
 import { getNewsForCategories } from '@/services/newsApi';
+import CategoriesBox from '../CategoriesBox';
 
 export default function Categories() {
     const [loading, setLoading] = useState(false);
@@ -17,28 +18,29 @@ export default function Categories() {
         try {
             setLoading(true);
             const teslaInfo = await getNewsForCategories('tesla');
-            setTesla(teslaInfo.articles[0]);
+            setTesla(teslaInfo.articles);
+            console.log(teslaInfo.articles);
 
             const bitcoinInfo = await getNewsForCategories('BitCoin');
-            setBitcoin(bitcoinInfo.articles[0])
+            setBitcoin(bitcoinInfo.articles)
 
             const sportsInfo = await getNewsForCategories('sports');
-            setSports(sportsInfo.articles[0])
+            setSports(sportsInfo.articles)
 
             const healthInfo = await getNewsForCategories('health');
-            setHealth(healthInfo.articles[0])
+            setHealth(healthInfo.articles)
 
             const appleInfo = await getNewsForCategories('apple');
-            setApple(appleInfo.articles[0])
+            setApple(appleInfo.articles)
 
             const businessInfo = await getNewsForCategories('business');
-            setBusiness(businessInfo.articles[0])
+            setBusiness(businessInfo.articles)
 
             const techCrunchInfo = await getNewsForCategories('TechCrunch');
-            setTechCrunch(techCrunchInfo.articles[0])
+            setTechCrunch(techCrunchInfo.articles)
 
             const entertainmentInfo = await getNewsForCategories('entertainment');
-            setEntertainment(entertainmentInfo.articles[0])
+            setEntertainment(entertainmentInfo.articles)
 
         } catch (e) {
             console.log(e);
@@ -62,100 +64,36 @@ export default function Categories() {
                 <div className={style.main_content}>
 
                     {tesla &&
-                        <div className={style.category_box}>
-                            <a href={`/category/Tesla`}>
-                                <h1 className={style.category_name}>Tesla</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={tesla.urlToImage} alt='news_image_tesla' />
-                                    <h1 className={style.news_title}>{tesla.title}</h1>
-                                    <h1 className={style.news_description}>{tesla.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Tesla'} info={tesla} />
+                    }
 
                     {bitcoin &&
-                        <div className={style.category_box}>
-                            <a href={`/category/bitcoin`}>
-                                <h1 className={style.category_name}>BitCoin</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={bitcoin.urlToImage} alt='news_image_bitcoin' />
-                                    <h1 className={style.news_title}>{bitcoin.title}</h1>
-                                    <h1 className={style.news_description}>{bitcoin.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'BitCoin'} info={bitcoin} />
+                    }
 
                     {sports &&
-                        <div className={style.category_box}>
-                            <a href={`/category/sports`}>
-                                <h1 className={style.category_name}>Sports</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={sports.urlToImage} alt='news_image_sports' />
-                                    <h1 className={style.news_title}>{sports.title}</h1>
-                                    <h1 className={style.news_description}>{sports.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Sports'} info={sports} />
+                    }
 
                     {health &&
-                        <div className={style.category_box}>
-                            <a href={`/category/health`}>
-                                <h1 className={style.category_name}>Health</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={health.urlToImage} alt='news_image_health' />
-                                    <h1 className={style.news_title}>{health.title}</h1>
-                                    <h1 className={style.news_description}>{health.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Health'} info={health} />
+                    }
 
                     {apple &&
-                        <div className={style.category_box}>
-                            <a href={`/category/apple`}>
-                                <h1 className={style.category_name}>Apple</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={apple.urlToImage} alt='news_image_apple' />
-                                    <h1 className={style.news_title}>{apple.title}</h1>
-                                    <h1 className={style.news_description}>{apple.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Apple'} info={apple} />
+                    }
 
                     {business &&
-                        <div className={style.category_box}>
-                            <a href={`/category/business`}>
-                                <h1 className={style.category_name}>Business</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={business.urlToImage} alt='news_image_business' />
-                                    <h1 className={style.news_title}>{business.title}</h1>
-                                    <h1 className={style.news_description}>{business.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Business'} info={business} />
+                    }
 
                     {techCrunch &&
-                        <div className={style.category_box}>
-                            <a href={`/category/techCrunch`}>
-                                <h1 className={style.category_name}>Tech Crunch</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={techCrunch.urlToImage} alt='news_image_techCrunch' />
-                                    <h1 className={style.news_title}>{techCrunch.title}</h1>
-                                    <h1 className={style.news_description}>{techCrunch.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'TechCrunch'} info={techCrunch} />
+                    }
 
                     {entertainment &&
-                        <div className={style.category_box}>
-                            <a href={`/category/entertainment`}>
-                                <h1 className={style.category_name}>Entertainment</h1>
-                                <div className={style.news_box}>
-                                    <img className={style.news_image} src={entertainment.urlToImage} alt='news_image_entertainment' />
-                                    <h1 className={style.news_title}>{entertainment.title}</h1>
-                                    <h1 className={style.news_description}>{entertainment.news_description}</h1>
-                                </div>
-                            </a>
-                        </div>}
+                        <CategoriesBox type={'Entertainment'} info={entertainment} />
+                    }
 
                 </div>}
 
