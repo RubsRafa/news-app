@@ -1,3 +1,5 @@
+"use client"
+
 import '../../app/globals.css';
 import { useRouter } from "next/router";
 import style from './layout.module.css';
@@ -15,6 +17,7 @@ export default function Category() {
             setLoading(true);
             const dataInfo = await getAllNews(type);
             setData(dataInfo.articles);
+            console.log('tipo', type)
         } catch (e) {
             console.log(e);
         } finally {

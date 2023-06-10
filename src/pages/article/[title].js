@@ -7,6 +7,7 @@ import style from './layout.module.css';
 export default function Article() {
     const router = useRouter();
     const { title } = router.query;
+    const urlTitle = encodeURIComponent(title);
     const handleGoBack = () => {
         router.back()
     }
@@ -16,7 +17,8 @@ export default function Article() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const dataInfo = await getSpecifiedArticle(title);
+            console.log('título', title, urlTitle)
+            const dataInfo = await getSpecifiedArticle(urlTitle);
             setData(dataInfo.articles[0]);
             console.log(dataInfo.articles[0]);
         } catch (e) {
@@ -54,7 +56,7 @@ export default function Article() {
 
                     <div className={style.article_content_box}>
                         <div className={style.article_content}>
-                            <img className={style.article_image} src={data?.urlToImage} alt='article_image' />
+                            {data?.urlToImage && <img className={style.article_image} src={data?.urlToImage} alt='article_image' />}
                             <h2 className={style.article_source}>Source: {data?.source.name}</h2>
                         </div>
                         <div className={style.article_content}>
@@ -64,7 +66,7 @@ export default function Article() {
                     </div>
 
                     <div className={style.article_main_text}>
-                        {data?.content.slice(0,199)}
+                        {data?.content}
                     </div>
                 </div>}
         </main>
