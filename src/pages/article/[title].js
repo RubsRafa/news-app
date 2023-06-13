@@ -24,10 +24,8 @@ export default function Article() {
         }
         try {
             setLoading(true);
-            console.log('título', title, newTitle)
             const dataInfo = await getSpecifiedArticle(newTitle);
             setData(dataInfo.articles[0]);
-            console.log(dataInfo.articles[0]);
         } catch (e) {
             console.log(e);
         } finally {

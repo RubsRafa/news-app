@@ -22,7 +22,6 @@ export default function Category() {
             setLoading(true);
             const dataInfo = await getAllNews(newType);
             setData(dataInfo.articles);
-            console.log('tipo', newType)
         } catch (e) {
             console.log(e);
         } finally {
